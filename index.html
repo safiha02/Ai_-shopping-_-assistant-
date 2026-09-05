@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Shopping Assistant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .box {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px #ccc;
+    }
+
+    input, button {
+      width: 90%;
+      padding: 12px;
+      margin: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: #222;
+      color: white;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <h1>🛍️ AI Shopping Assistant</h1>
+
+    <p>Tell us what product you are looking for:</p>
+
+    <input id="request" type="text"
+      placeholder="Example: laptop for coding">
+
+    <button onclick="recommend()">Get Recommendation</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function recommend() {
+      let request = document.getElementById("request").value.toLowerCase();
+      let result = document.getElementById("result");
+
+      if (request.includes("laptop")) {
+        result.innerHTML =
+          "💻 Recommended: Look for a laptop with good RAM, SSD storage and a modern processor.";
+      } 
+      else if (request.includes("phone")) {
+        result.innerHTML =
+          "📱 Recommended: Look for a phone with good battery life, camera and performance.";
+      } 
+      else {
+        result.innerHTML =
+          "🤖 Recommendation: Please specify the product type and your requirements.";
+      }
+    }
+  </script>
+</body>
+</html>
